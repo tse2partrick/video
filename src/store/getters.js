@@ -1,0 +1,10 @@
+export const channel = state => state.channel
+export const currentChannel = state => state.currentChannel
+export const needScroll = state => state.needScroll
+export const currentClipId = state => state.currentClipId
+export const currentPartId = state => state.currentPartId
+export const currentPlayUrl = state => state.currentPlayUrl
+export const needResetPage = state => state.needResetPage
+export const playHistory = state => state.playHistory
+export const currentVideo = state => state.currentVideo
+export const currentSearchResult = state => state.currentSearchResult
