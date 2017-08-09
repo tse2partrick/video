@@ -302,6 +302,10 @@
             font-size: 15px
             box-sizing: border-box
             padding: 5px
+            max-width: 70%
+            text-overflow: ellipsis
+            overflow: hidden
+            white-space: nowrap
       .title
         font-size: 18px
         text-overflow: ellipsis

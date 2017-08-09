@@ -17,7 +17,7 @@
 </template>
 
 <script type="text/javascript">
-  import {prefixStyle, isMobile} from 'common/js/util'
+  import {prefixStyle} from 'common/js/util'
   import {mapGetters, mapMutations} from 'vuex'
   import {getSuggest, getSearchRes} from 'api/search'
   import {RES_OK} from 'common/js/config'
@@ -37,9 +37,6 @@
       }
     },
     created() {
-      this.mobile = isMobile()
-      this._isMobile()
-
       // 监听滑动，隐藏搜索结果栏
       this._listenScroll()
 
@@ -60,7 +57,8 @@
     },
     computed: {
       ...mapGetters([
-        'needResetPage'
+        'needResetPage',
+        'isMobile'
       ])
     },
     methods: {
@@ -116,7 +114,7 @@
       },
       _isMobile() {
         // PC端监听resize
-        if (!this.mobile) {
+        if (!this.isMobile) {
           window.addEventListener('resize', () => {
             this._initSearchBoxWidth(false)
             this.$refs.searchBox.style.transition = ''

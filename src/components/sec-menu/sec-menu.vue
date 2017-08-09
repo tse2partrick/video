@@ -29,7 +29,7 @@
 
 <script type="text/javascript">
   import {initBanner} from 'common/js/util'
-  import {mapMutations, mapGetters} from 'vuex'
+  import {mapMutations} from 'vuex'
   import Loading from 'base/loading/loading'
   export default {
     props: {
@@ -55,10 +55,7 @@
     computed: {
       getContentWrapperStyle() {
         return this.vBanner.length ? {'margin-top': '20px', 'padding': '5px', 'box-sizing': 'border-box'} : ''
-      },
-      ...mapGetters([
-        'needResetPage'
-      ])
+      }
     },
     methods: {
       goToPlay(item) {
@@ -87,14 +84,6 @@
         'setCurrentPartId': 'SET_CURRENT_PART_ID',
         'setCurrentVideo': 'SET_CURRENT_VIDEO'
       })
-    },
-    watch: {
-      needResetPage() {
-        if (!this.$refs.vMenuSec) {
-          return
-        }
-        initBanner(this.$refs.bannerWrapper, this.$refs.banner, this.$refs.dot)
-      }
     },
     components: {
       Loading

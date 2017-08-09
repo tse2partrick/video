@@ -1,19 +1,83 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Movie from 'components/movie/movie'
-import Tv from 'components/tv/tv'
-import Variety from 'components/variety/variety'
-import Cartoon from 'components/cartoon/cartoon'
-import Game from 'components/game/game'
-import Music from 'components/music/music'
-import Doc from 'components/doc/doc'
-import TabSetting from 'components/tab-setting/tab-setting'
-import News from 'components/news/news'
-import Edu from 'components/edu/edu'
-import Player from 'components/player/player'
-import Personal from 'components/personal/personal'
-import SearchResult from 'components/search-result/search-result'
 import {localConfig} from 'common/js/config'
+
+const Movie = (resolve) => {
+  import('components/movie/movie').then((module) => {
+    resolve(module)
+  })
+}
+
+const Tv = (resolve) => {
+  import('components/tv/tv').then((module) => {
+    resolve(module)
+  })
+}
+
+const Variety = (resolve) => {
+  import('components/variety/variety').then((module) => {
+    resolve(module)
+  })
+}
+
+const Cartoon = (resolve) => {
+  import('components/cartoon/cartoon').then((module) => {
+    resolve(module)
+  })
+}
+
+const Game = (resolve) => {
+  import('components/game/game').then((module) => {
+    resolve(module)
+  })
+}
+
+const Music = (resolve) => {
+  import('components/music/music').then((module) => {
+    resolve(module)
+  })
+}
+
+const Doc = (resolve) => {
+  import('components/doc/doc').then((module) => {
+    resolve(module)
+  })
+}
+
+const News = (resolve) => {
+  import('components/news/news').then((module) => {
+    resolve(module)
+  })
+}
+
+const Edu = (resolve) => {
+  import('components/edu/edu').then((module) => {
+    resolve(module)
+  })
+}
+
+const Player = (resolve) => {
+  import('components/player/player').then((module) => {
+    resolve(module)
+  })
+}
+const TabSetting = (resolve) => {
+  import('components/tab-setting/tab-setting').then((module) => {
+    resolve(module)
+  })
+}
+const Personal = (resolve) => {
+  import('components/personal/personal').then((module) => {
+    resolve(module)
+  })
+}
+
+const SearchResult = (resolve) => {
+  import('components/search-result/search-result').then((module) => {
+    resolve(module)
+  })
+}
+
 Vue.use(Router)
 
 export default new Router({

@@ -1,4 +1,5 @@
 import {localConfig} from 'common/js/config'
+import {isMobile} from 'common/js/util'
 
 const state = {
   channel: JSON.parse(localStorage.getItem(localConfig.channel)) || [
@@ -25,7 +26,10 @@ const state = {
 
   // 本地存储播放历史，如果没有就为空
   playHistory: localStorage.getItem(localConfig.playHistory) ? JSON.parse(localStorage.getItem(localConfig.playHistory)) : [],
-  currentSearchResult: []
+  currentSearchResult: [],
+
+  // 移动端判断
+  isMobile: isMobile()
 }
 
 export default state

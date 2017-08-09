@@ -8,3 +8,4 @@ export const needResetPage = state => state.needResetPage
 export const playHistory = state => state.playHistory
 export const currentVideo = state => state.currentVideo
 export const currentSearchResult = state => state.currentSearchResult
+export const isMobile = state => state.isMobile

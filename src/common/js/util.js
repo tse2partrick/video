@@ -88,7 +88,7 @@ export function scrollX(outerTab, insideBox) {
     }
     box.style.transform = 'translate3d(' + touch.deltaX + 'px, 0, 0)'
   })
-  box.addEventListener('mouseup', (e) => {
+  window.addEventListener('mouseup', (e) => {
     var move
     box.style.transition = '0.2s ease-in-out'
     if (touch.deltaX > maxLeft) {
@@ -125,7 +125,7 @@ export function scrollX(outerTab, insideBox) {
     box.style.transform = 'translate3d(' + touch.deltaX + 'px, 0, 0)'
   })
 
-  box.addEventListener('touchend', function(e) {
+  window.addEventListener('touchend', function(e) {
     var move
     box.style.transition = '0.2s ease-in-out'
     if (touch.deltaX > maxLeft) {
@@ -409,7 +409,7 @@ export function initBanner(bannerWrapper, banner, dot, options = {
     banner.style.transform = `translate3d(${touch.deltaX}px, 0, 0)`
   })
 
-  banner.addEventListener('mouseup', (e) => {
+  window.addEventListener('mouseup', (e) => {
     if (isMobile) {
       return
     }
@@ -485,7 +485,7 @@ export function initBanner(bannerWrapper, banner, dot, options = {
     banner.style.transform = `translate3d(${touch.deltaX}px, 0, 0)`
   })
 
-  banner.addEventListener('touchend', (e) => {
+  window.addEventListener('touchend', (e) => {
     if (!touch.x2) {
       initMove = false
       if (autoPlay) {
@@ -609,7 +609,7 @@ export function scrollY(outerTab, insideBox) {
     }
     box.style.transform = 'translate3d(0, ' + touch.deltaX + 'px, 0)'
   })
-  box.addEventListener('mouseup', (e) => {
+  window.addEventListener('mouseup', (e) => {
     var move
     box.style.transition = '0.2s ease-in-out'
     if (touch.deltaX > maxLeft) {
@@ -646,7 +646,7 @@ export function scrollY(outerTab, insideBox) {
     box.style.transform = 'translate3d(0, ' + touch.deltaX + 'px, 0)'
   })
 
-  box.addEventListener('touchend', function(e) {
+  window.addEventListener('touchend', function(e) {
     var move
     box.style.transition = '0.2s ease-in-out'
     if (touch.deltaX > maxLeft) {

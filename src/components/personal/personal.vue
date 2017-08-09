@@ -12,7 +12,7 @@
         <div class="video-title-wrapper">
           <div class="video-title" ref="videoTitle">{{item.name}}</div>
           <div class="video-percent" ref="videoPercent">播放进度：{{serialize(item.percent)}}</div>
-          <div class="video-viewtime">{{item.viewtime}}</div>
+          <div class="video-viewtime" ref="viewTime">{{item.viewtime}}</div>
         </div>
         <div class="del-one" @click.stop="delOne(item)">
           <i class="icon-del-one iconfont icon-delete-one"></i>
@@ -41,7 +41,12 @@
         'playHistory'
       ])
     },
-    updated() {
+    mounted() {
+      setTimeout(() => {
+        this._initPercentPadding()
+      }, 200)
+    },
+    activated() {
       this.$nextTick(() => {
         this._initPercentPadding()
       })
@@ -51,12 +56,17 @@
         let image = this.$refs.videoImage
         let title = this.$refs.videoTitle
         let percent = this.$refs.videoPercent
-        if (image && percent && title) {
+        let viewTime = this.$refs.viewTime
+        if (image && percent && title && viewTime) {
           for (let i = 0; i < image.length; i++) {
-            if (percent[i].clientHeight + title[i].clientHeight > image[i].clientHeight) {
+            if (percent[i].style.padding) {
+              continue
+            }
+            if (percent[i].clientHeight + title[i].clientHeight + viewTime[i].clientHeight >= image[i].clientHeight) {
               percent[i].style.padding = ''
             } else {
-              percent[i].style.padding = (image[i].clientHeight - title[i].clientHeight - percent[i].clientHeight) / 3 + 'px 0'
+              let delta = image[i].clientHeight - title[i].clientHeight - percent[i].clientHeight - viewTime[i].clientHeight
+              percent[i].style.padding = delta / 2 + 'px 0'
             }
           }
         }
@@ -93,6 +103,7 @@
         playHistory.splice(index, 1)
 
         this.setPlayHistory(playHistory)
+        localStorage.setItem(localConfig.playHistory, playHistory)
       },
       goToPlay(item) {
         this.setCurrentClipId(item.clipId)
@@ -153,6 +164,9 @@
           font-size: 15px
           box-sizing: border-box
           padding-left: 10px
+          .video-title
+            color: $color-theme
+            font-weight: bold
           .video-percent
             color: #999
         .del-one
