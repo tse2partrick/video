@@ -1,21 +1,3 @@
-# movie
+## 演示地址：http://localhost:8081
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 数据来源于芒果TV，芒果不支持手机上观看下一页（出现相同数据，可能是服务器设置了，让用户去下载APP吧），也没有高清观看...请支持正版。设计参考了知乎头部搜索栏、腾讯视频手机版横行滚动条、芒果TV的数据兼容样式，拖动变换模块用了插件。
