@@ -5,7 +5,7 @@
 </template>
 
 <script type="text/javascript">
-  import {getCartoonMenu, getCartoon} from 'api/Cartoon'
+  import {getCartoonMenu, getCartoon} from 'api/cartoon'
   import {RES_OK} from 'common/js/config'
   import {menuMixin} from 'common/js/mixins'
   import VMenu from 'components/v-menu/v-menu'

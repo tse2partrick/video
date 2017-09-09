@@ -47,7 +47,9 @@ export function scrollX(outerTab, insideBox) {
   for (let i = 0; i < box.children.length; i++) {
     boxWidth += box.children[i].clientWidth
   }
-  box.style.width = boxWidth + 'px'
+
+  // 增加20宽度兼容一些手机浏览器，防止跌下去
+  box.style.width = boxWidth + 20 + 'px'
 
   // 判断是否需要移动
   if (tabWidth >= boxWidth) {

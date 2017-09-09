@@ -270,7 +270,6 @@
               border: 1px solid $color-sub-theme
               background: #FFF
               border-radius: 10px
-              font-weight: bold
     .movie-box
       display: flex
       flex-wrap: wrap
