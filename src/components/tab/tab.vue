@@ -88,7 +88,7 @@
       },
       _hashGoScroll() {
         let index = this.channel.findIndex((i) => {
-          return i.eName === this.$router.currentRoute.fullPath.slice(1)
+          return i.eName === window.location.hash.slice(2)
         })
         if (index === -1) {
           index = this.channel.findIndex((i) => {
